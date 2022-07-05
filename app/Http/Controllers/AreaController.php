@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AreaRequest;
 use App\Models\Area;
 use Illuminate\Http\Request;
+use App\Http\Resources\AreaResource;
+
 
 class AreaController extends Controller
 {
@@ -53,7 +55,7 @@ class AreaController extends Controller
     public function show($id)
     {
         // Area Detail
-        $area = Area::find($id);
+        $area = new AreaResource( Area::find($id));
         if(!$area){
             return response()->json([
                 'message'=>'Area Not Found.'

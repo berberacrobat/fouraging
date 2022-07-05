@@ -10,13 +10,13 @@ class Area extends Model
     use HasFactory;
 
     protected $table = 'areas';
-    protected $with = 'address';
 
     protected $fillable = [
         'name',
         'image',
         'description'
     ];
+
 
     public function forage(){
 
@@ -27,4 +27,5 @@ class Area extends Model
 
         return $this->belongsTo(Address::class);
     }
+
 }

@@ -23,6 +23,8 @@ Route::resources([
 
 Route::get('/forages/{forage}/areas', [ForageController::class,'forageAreas']);
 Route::get('/forages/{forage}/areas/{area}', [ForageController::class,'forageArea']);
+Route::post('/forages/{forage}/areas', [ForageController::class,'forageAreaStore']);
+
 
 
 
