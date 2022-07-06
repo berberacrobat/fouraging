@@ -124,27 +124,38 @@ class ForageController extends Controller
     public function forageAreaStore(Request $request, Forage $forage)
     {
         //return $request->toArray();
-        $newLocation = $request->input('newForageStation');
+        $newLocation = json_decode($request->input('newForageStation'), true);
 
         $newArea = new Area();
         $newArea->forage()->associate( $forage);
-        $newArea->address_id = 1;
+
+        $newAddress = new Address();
+        $newAddress->address ="Test";
+        $newAddress->sub_address ="Test 2";
+        $newAddress->city = "City test";
+        $newAddress->zip_code = "Zip code";
+        $newAddress->country = "Country";
+        $newAddress->latitude =  $newLocation['position']['latitude'];
+        $newAddress->longitude = $newLocation['position']['longitude'];
+
+        $newAddress->save();
+
+        $newArea->address()->associate( $newAddress );
+
+
+        //$newArea->address_id = 1;
         $newArea->name = "testing";
         $newArea->image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQALJiATjTXuSriYCuWy9Ai0jO0e-nMaY6a_w&usqp=CAU";
         $newArea->description = "Test description";
 
-
-        //$newaddress = new Address();
-       // $newaddress->latitude =  $newLocation['position']['latitude'];
-        //$newaddress->longitude = $newLocation['position']['longitude'];
-
-        //$newArea->address()->associate( $newaddress );
-
         $newArea->save();
 
         return response()->json([
-            'forage'=> new ForageResource($forage),
-            'New Area'=> new AreaResource($newArea)],200);
+            //'forage'=> new ForageResource($forage),
+           // 'New Area'=> new AreaResource($newArea),
+            'DEBUG'=> $newLocation['position']['longitude'],
+            'pos', $newLocation,
+            ],200);
        // return $forage;
     }
 }
