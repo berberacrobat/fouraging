@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AreaRequest;
 use App\Models\Area;
+use App\Models\Document;
 use Illuminate\Http\Request;
 use App\Http\Resources\AreaResource;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Input\Input;
 
 
 class AreaController extends Controller
@@ -44,6 +47,38 @@ class AreaController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+
+    public function storePhoto(Request $request)
+    {
+        $area = Area::find( 1 );
+        $baseurl = "http://localhost:8000";
+
+
+        $fs = $_FILES;
+
+        for ( $i = 0; $i< count($_FILES); $i++ ){
+
+            $fileName = time()."--".$i.'-'.$_FILES["pictures-".$i]["name"];
+            move_uploaded_file($_FILES["pictures-".$i]["tmp_name"], "storage/uploads/".$fileName);
+            // $path = Storage::disk('local')->put("/public/uploads/".$fileName, file_get_contents($_FILES['pictures-0']['tmp_name']));
+            $url = Storage::url( "uploads/".$fileName );
+
+            $d = new Document();
+            $d->name = $fileName;
+            $d->url = $baseurl.$url;
+
+            $d->concerns()->associate( $area )->save();
+        }
+
+        //$extension = pathinfo($_FILES["pictures-0"]["name"], PATHINFO_EXTENSION);
+
+        //Storage::disk('local')->put('example.txt', 'Contents');
+
+
+        return response()->json(['URL'=> $url, 'message' => 'Image uploaded', 'files count' => count( $fs ), 'files' => $fs],200);
+
     }
 
     /**

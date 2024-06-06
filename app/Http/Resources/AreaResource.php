@@ -22,8 +22,10 @@ class AreaResource extends JsonResource
             'name' => $this->name,
             'description'=> $this->description,
             'forage' =>  $this->forage->id,
+            'forage_name' => $this->forage->name,
             'forage_image' => $this->forage->image,
-            'address' => $this->address
+            'address' => $this->address,
+            'documents' => new DocumentCollection($this->documents)
         ];
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ForageSimpleResource extends JsonResource
+class DocumentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -12,16 +12,11 @@ class ForageSimpleResource extends JsonResource
      * @param  \Illuminate\Http\Request  $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public static $wrap = null;
-
     public function toArray($request)
     {
-        //return parent::toArray($request);
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'description'=> $this->description,
-            'image' => $this->image,
+            'url' => $this->url
         ];
     }
 }

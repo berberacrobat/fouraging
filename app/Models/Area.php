@@ -30,4 +30,12 @@ class Area extends Model
         return $this->belongsTo(Address::class);
     }
 
+    /**
+     * Get all of the area's Documents.
+     */
+    public function documents()
+    {
+        return $this->morphMany('App\Models\Document', 'concerns');
+    }
+
 }

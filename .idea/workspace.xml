@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db2deb43-b448-44fe-ac45-15a6e990cd20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ForageSimpleResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AreaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AreaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ForageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ForageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AreaResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AreaResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Area.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Area.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,8 +146,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Resources" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http/Resources" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -179,6 +189,20 @@
       <workItem from="1656570851169" duration="971000" />
       <workItem from="1656784282551" duration="3129000" />
       <workItem from="1657060505290" duration="7121000" />
+      <workItem from="1657076737777" duration="3184000" />
+      <workItem from="1658208313096" duration="809000" />
+      <workItem from="1658211023138" duration="3400000" />
+      <workItem from="1658252800660" duration="1727000" />
+      <workItem from="1658286553852" duration="2943000" />
+      <workItem from="1658591936163" duration="8267000" />
+      <workItem from="1658684004139" duration="1309000" />
+      <workItem from="1660491995392" duration="628000" />
+      <workItem from="1661104663167" duration="594000" />
+      <workItem from="1661620619969" duration="773000" />
+      <workItem from="1661706533551" duration="587000" />
+      <workItem from="1662223914888" duration="229000" />
+      <workItem from="1662316424755" duration="549000" />
+      <workItem from="1663444311775" duration="95000" />
     </task>
     <servers />
   </component>
@@ -186,17 +210,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="669" y="200" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1656264490908">
-      <screen x="0" y="25" width="1440" height="825" />
+    <state x="444" y="245" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1658213710433">
+      <screen x="0" y="25" width="1440" height="827" />
+    </state>
+    <state x="444" y="245" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.827@0.25.1440.827" timestamp="1658213710433" />
+    <state x="669" y="200" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1658288639570">
+      <screen x="0" y="25" width="1440" height="826" />
     </state>
     <state x="669" y="200" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.825@0.25.1440.825" timestamp="1656264490908" />
+    <state x="669" y="200" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1440.826@0.25.1440.826" timestamp="1658288639570" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/ForageController.php</url>
-          <line>126</line>
+          <line>138</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

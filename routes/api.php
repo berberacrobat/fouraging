@@ -16,14 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/forages/all', [ForageController::class,'foragesList']);
+
 Route::resources([
     'forages' => ForageController::class,
     'areas' => AreaController::class,
 ]);
 
+
+
 Route::get('/forages/{forage}/areas', [ForageController::class,'forageAreas']);
 Route::get('/forages/{forage}/areas/{area}', [ForageController::class,'forageArea']);
 Route::post('/forages/{forage}/areas', [ForageController::class,'forageAreaStore']);
+
+
+Route::post('/upload/areas/photo', [AreaController::class,'storePhoto']);
+
 
 
 

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Resources\AreaCollection;
 use App\Http\Resources\AreaResource;
 use App\Http\Resources\ForageCollection;
+use App\Http\Resources\ForageListCollection;
 use App\Http\Resources\ForageResource;
+use App\Http\Resources\ForageSimpleResource;
 use App\Models\Address;
 use App\Models\Area;
 use App\Models\Forage;
@@ -25,7 +27,17 @@ class ForageController extends Controller
 
         return $forages;
         // Return Json Response
-        return response()->json([$forages],200);
+       // return response()->json([$forages],200);
+    }
+
+    public function foragesList()
+    {
+        // All Areas
+        $forages = ForageSimpleResource::collection(Forage::all());
+
+        //return $forages;
+        // Return Json Response
+        return response()->json($forages,200);
     }
 
     /**
@@ -144,18 +156,20 @@ class ForageController extends Controller
 
 
         //$newArea->address_id = 1;
-        $newArea->name = "testing";
+        $newArea->name = $newLocation['name'];
         $newArea->image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQALJiATjTXuSriYCuWy9Ai0jO0e-nMaY6a_w&usqp=CAU";
-        $newArea->description = "Test description";
+        $newArea->description = $newLocation['description'];
 
         $newArea->save();
 
         return response()->json([
             //'forage'=> new ForageResource($forage),
            // 'New Area'=> new AreaResource($newArea),
-            'DEBUG'=> $newLocation['position']['longitude'],
-            'pos', $newLocation,
-            ],200);
+            'New location', $newLocation,
+            'name', $newLocation['name'],
+            'description', $newLocation['description'],
+            'forageId', $newLocation['forageId'],
+        ],200);
        // return $forage;
     }
 }
